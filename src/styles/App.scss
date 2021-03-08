@@ -1,0 +1,27 @@
+/* Colors */
+$bg:#d3cad6; // Default Background
+$purple: #d3cad6;
+$dk-gry: #28303d;
+
+/* General */
+body, html {
+  background-color: $bg;
+}
+
+.app {
+  text-align: center;
+  background-color: $purple;
+  min-height: 100vh;
+  color: $dk-gry;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 70px 50px 50px;
+
+  h1 {
+    font-size: 2em;
+  }
+}

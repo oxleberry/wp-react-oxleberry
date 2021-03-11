@@ -1,5 +1,6 @@
 import './App.css';
 import './styles/App.scss';
+import Home from './pages/Home.js';
 // import logo from './logo.svg';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <header className="header">
         <h1>Hello Oxleberry</h1>
       </header>
+      <Home slug="home"/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

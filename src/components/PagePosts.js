@@ -6,8 +6,7 @@ class PagePosts extends Component {
 		super();
 		this.state = {
       allPosts: [],
-      title: []
-      // pagePost: []
+      pagePost: []
     }
 
 		// Grabbing WP Pages API data
@@ -40,18 +39,21 @@ class PagePosts extends Component {
 		const allPosts = this.fetchData();
 		allPosts.then( ( posts ) => {
 
-      // let pagePost;
-      // posts.forEach( post => {
-      //   // Find pagePost by matching all Posts slug with passed in component Props slug
-      //   if (post.slug === this.props.slug) {
-      //     pagePost = [post];
-      //   }
-      // })
+      let pagePost;
+      posts.forEach( post => {
+        // Find pagePost by matching all Posts slug with passed in component Props slug
+        if (post.slug === this.props.slug) {
+          // console.log(this.props.slug)
+          // console.log(post.slug)
+          pagePost = [post];
+        }
+      })
       this.setState({
         allPosts: posts,
-        title: posts[0].title
+        pagePost: pagePost,
       })
       console.log( "ALL pages Data:", this.state.allPosts );
+      console.log( "THIS pages Data:", this.state.pagePost );
 		})
 	};
 
@@ -59,22 +61,22 @@ class PagePosts extends Component {
     return (
       <div className="post-container">
         {/* Displaying ALL of the Posts across the site */}
-        {this.state.allPosts.map( post =>
+        {/* {this.state.allPosts.map( post =>
+          <PagePost key={ post.id }
+            title={ post.title.rendered }
+            // desc={ post.acf.description }
+            // img={ post.acf.image }
+            content={ post.content.rendered }
+          /> )} */}
+
+        {/* Displaying only posts for associated with a page */}
+        {this.state.pagePost.map( post =>
           <PagePost key={ post.id }
             title={ post.title.rendered }
             // desc={ post.acf.description }
             // img={ post.acf.image }
             content={ post.content.rendered }
           /> )}
-
-        {/* Displaying only posts for associated with a page */}
-        {/* {this.state.pagePost.map( post =>
-          <PagePost key={ post.id }
-            title={ post.title.rendered }
-            // desc={ post.acf.description }
-            // img={ post.acf.image }
-            // content={ post.content.rendered }
-          /> )} */}
       </div>
     );
   }

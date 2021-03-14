@@ -27,7 +27,7 @@ class PagePosts extends Component {
 		try {
       const response = await fetch(this.apiRequest);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       console.error(error);
@@ -43,7 +43,7 @@ class PagePosts extends Component {
       posts.forEach( post => {
         // Find pagePost by matching all Posts slug with passed in component Props slug
         if (post.slug === this.props.slug) {
-          // console.log(this.props.slug)
+          console.log(this.props.slug)
           // console.log(post.slug)
           pagePost = [post];
         }
@@ -53,7 +53,7 @@ class PagePosts extends Component {
         pagePost: pagePost,
       })
       console.log( "ALL pages Data:", this.state.allPosts );
-      console.log( "THIS pages Data:", this.state.pagePost );
+      console.log( "THIS pages Data:", this.state.pagePost[0] );
 		})
 	};
 

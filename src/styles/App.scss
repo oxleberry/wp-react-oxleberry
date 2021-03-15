@@ -1,19 +1,113 @@
+/* Fonts */
+// @import url('https://fonts.googleapis.com/css2?family=Lato|Baloo+2:wght@400;600|Raleway|Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Lato:wght@300;400&display=swap');
+$title-font: 'Baloo 2', sans-serif;
+$subtitle-font: 'Century Gothic', Helvetica, sans-serif;
+$sans-serif: 'Lato', sans-serif;
+
 /* Colors */
-$bg:#d3cad6; // Default Background
-$purple: #d3cad6;
+$bg: #fff; // Default Background
 $dk-gry: #28303d;
+$brown: #512b05;
+$black: #000;
+
+$link-color: rgba( 255, 255, 255, 0.5);
+$link-color-hover: rgba( 255, 255, 255, 0.9);
+
+/* Variables */
+$main-nav-height: 58px;
+
 
 /* General */
 body, html {
   background-color: $bg;
+  font-family: $sans-serif;
+  color: $black;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-family: $sans-serif;
+  font-size: 16px;
+  color: $black;
+}
+
+a {
+  font-family: $subtitle-font;
+  font-size: 16px;
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+/* App */
 .app {
   text-align: center;
-  background-color: $purple;
+  background-color: $bg;
   min-height: 100vh;
   color: $dk-gry;
 }
+
+
+/* Main Navbar */
+.main-nav {
+  background-color: $brown;
+  padding: 6px 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $main-nav-height;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  .left-nav a {
+    padding-right: 2.8rem;
+  }
+
+  .left-nav a:first-of-type {
+    font-family: $title-font;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .right-nav a {
+    height: 100%;
+  }
+}
+
 
 /* Header */
 .header {

@@ -6,6 +6,7 @@ import './App.css';
 import './styles/App.scss';
 import Home from './pages/Home.js';
 import About from './pages/About.js';
+import Contact from './pages/Contact.js';
 import Nav from './components/Nav.js';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
                 <Route exact path="/"><Home slug="home"/></Route>
                 <Route path="/home"><Home slug="home"/></Route>
                 <Route path="/about"><About slug="about"/></Route>
-                {/* <Route path="/contact"><Contact slug="contact" /></Route> */}
+                <Route path="/contact"><Contact slug="contact" /></Route>
                 {/* <Route path="/privacy-policy"><PrivacyPolicy /></Route> */}
               </Switch>
             </div>

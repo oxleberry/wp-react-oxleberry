@@ -23,6 +23,8 @@ body, html {
   background-color: $bg;
   font-family: $sans-serif;
   color: $black;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -63,6 +65,10 @@ li {
   color: $dk-gry;
 }
 
+.content {
+  padding-top: $main-nav-height;
+}
+
 
 /* Main Navbar */
 .main-nav {
@@ -94,10 +100,10 @@ li {
   }
 
   .left-nav a {
-    padding-right: 2.8rem;
+    padding-right: 2.7rem;
   }
 
-  .left-nav a:first-of-type {
+  .left-nav li:first-of-type a {
     font-family: $title-font;
     font-size: 2rem;
     font-weight: 600;

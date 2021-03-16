@@ -1,0 +1,16 @@
+
+// Media breakpoint helper based on breakpoints below
+// Credit: http://css-tricks.com/conditional-media-query-mixins/
+
+// Media Query Breakpoints
+// (No media query on 1024px + ) // Large devices (desktop) - Default styling size
+$screen-m: '(max-width: 1024px)'; // Medium devices (tablets)
+$screen-s: '(max-width: 600px)'; // Small devices (mobile)
+
+@mixin bp($point) {
+  @if $point == m {
+    @media #{$screen-m} { @content; }
+  } @else if $point == s {
+    @media #{$screen-s} { @content; }
+  }
+}

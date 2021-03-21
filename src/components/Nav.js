@@ -1,6 +1,14 @@
 import React, {Component } from 'react';
 import { Link } from "react-router-dom";
 
+
+const toggleMobileNav = (() => {
+  const navItem = document.querySelectorAll(".mobile-nav ul");
+  navItem.forEach(item => {
+    item.classList.toggle('hidden');
+  })
+})
+
 class Navbar extends Component {
 	constructor() {
 		super();
@@ -39,25 +47,41 @@ class Navbar extends Component {
 			this.setState( { navItems: navItem } )
 			console.log( "Nav Data:", this.state.navItems );
 		})
-	};
+  };
 
   render() {
     return (
-      <nav className="main-nav">
-        <ul className="left-nav">
-          {/* looping through Nav Items */}
-          {this.state.navItems.map( (nav,idx) =>
-            <li key={idx}>
-              <Link to={ `${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`} >{nav.title}</Link>
+      <div>
+        {/* Desktop */}
+        <nav className="desktop-nav">
+          <ul className="left-nav">
+            {this.state.navItems.map( (nav,idx) =>
+              <li key={idx}>
+                <Link to={ `${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`} >{nav.title}</Link>
+              </li>
+            )}
+          </ul>
+          <ul className="right-nav">
+            <li>
+              <Link to='/'><img src="http://www.oxleberry.com/all/mon_all.gif" alt="Oxleberry Logo"></img></Link>
             </li>
-          )}
-        </ul>
-        <ul className="right-nav">
-          <li>
-            <Link to='/'><img src="http://www.oxleberry.com/all/mon_all.gif" alt="Oxleberry Logo"></img></Link>
-          </li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+
+        {/* Mobile */}
+        <nav className="mobile-nav">
+          <button onClick={toggleMobileNav}>
+            <img src="http://www.oxleberry.com/all/mon_all.gif" alt="Oxleberry Logo"></img>
+          </button>
+          <ul className="hidden">
+            {this.state.navItems.map( (nav,idx) =>
+              <li key={idx}>
+                <Link to={ `${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`} >{nav.title}</Link>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </div>
     );
   }
 }

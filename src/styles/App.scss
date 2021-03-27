@@ -1,5 +1,6 @@
-@import './mixins.scss';
-
+// @use './utilities/mixins' as *;
+@use 'utilities/colors';
+@import 'utilities/mixins.scss';
 
 /* Fonts */
 // @import url('https://fonts.googleapis.com/css2?family=Lato|Baloo+2:wght@400;600|Raleway|Sigmar+One&display=swap');
@@ -7,16 +8,6 @@
 $title-font: 'Baloo 2', sans-serif;
 $subtitle-font: 'Century Gothic', Helvetica, sans-serif;
 $sans-serif: 'Lato', sans-serif;
-
-/* Colors */
-$bg: #fff; // Default Background
-$dk-gry: #28303d;
-$brown: #512b05;
-$soft-brown: #7e5d3c;
-$black: #000;
-
-$link-color: rgba( 255, 255, 255, 0.5);
-$link-color-hover: rgba( 255, 255, 255, 0.9);
 
 
 /* Variables */
@@ -27,11 +18,11 @@ $mobile-navs-z: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
 
 /* General */
 body, html {
-  background-color: $bg;
-  font-family: $sans-serif;
-  color: $black;
   margin: 0;
   padding: 0;
+  background-color: colors.$bg;
+  color: colors.$text;
+  font-family: $sans-serif;
 }
 
 * {
@@ -41,7 +32,7 @@ body, html {
 p {
   font-family: $sans-serif;
   font-size: 16px;
-  color: $black;
+  color: colors.$text;
 
   @include bp(m) {
     color: turquoise;
@@ -55,11 +46,11 @@ p {
 a {
   font-family: $subtitle-font;
   font-size: 16px;
-  color: $link-color;
+  color: colors.$nav-link;
   text-decoration: none;
 
   &:hover {
-    color: $link-color-hover;
+    color: colors.$nav-link-hover;
   }
 }
 
@@ -75,9 +66,9 @@ li {
 /* App */
 .app {
   text-align: center;
-  background-color: $bg;
+  background-color: colors.$bg;
   min-height: 100vh;
-  color: $dk-gry;
+  color: colors.$dk-gry;
 }
 
 .content {
@@ -87,7 +78,7 @@ li {
 
 /* Desktop Navbar */
 .desktop-nav {
-  background-color: $brown;
+  background-color: colors.$brown;
   padding: 6px 3rem;
   position: fixed;
   top: 0;
@@ -139,7 +130,7 @@ li {
 
 /* Mobile Navbar */
 .mobile-nav {
-  background-color: $brown;
+  background-color: colors.$brown;
   position: fixed;
   left: 0;
   height: $main-nav-height;
@@ -156,14 +147,14 @@ li {
     width: 100%;
     padding: 0;
     position: relative;
-    background-color: $brown;
+    background-color: colors.$brown;
     z-index: 1;
-    border-bottom: 1px solid $soft-brown;
+    border-bottom: 1px solid colors.$soft-brown;
 
     img {
       padding-top: 4px;
       height: 86%;
-      background-color: $brown;
+      background-color: colors.$brown;
     }
 
     &:hover {
@@ -182,7 +173,7 @@ li {
 
   ul {
     margin-top: 0;
-    background-color: $brown;
+    background-color: colors.$brown;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -207,12 +198,12 @@ li {
   }
 
   li {
-    background-color: $brown;
+    background-color: colors.$brown;
     display: flex;
     align-items: center;
     height: 58px;
     width: 100%;
-    border-bottom: 1px solid $soft-brown;
+    border-bottom: 1px solid colors.$soft-brown;
     justify-content: center;
     background: linear-gradient(0deg, #512b05 80%, #432303);
     position: relative;

@@ -2,10 +2,11 @@
 @use 'utilities/colors';
 @use 'utilities/fonts';
 
+/* Components */
+@use 'components/nav';
+
+
 /* Variables */
-$main-nav-height: 58px;
-$main-nav-count: 5;
-$mobile-navs-z: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
 
 
 /* General */
@@ -70,195 +71,9 @@ li {
 }
 
 .content {
-  padding-top: $main-nav-height;
+  padding-top: nav.$main-nav-height;
 }
 
-/* Shared Navbar */
-.desktop-nav,
-.mobile-nav {
-  a {
-    color: colors.$nav-link;
-    font-family: fonts.$subtitle-font;
-
-    &:hover {
-      color: colors.$nav-link-hover;
-    }
-  }
-}
-
-/* Desktop Navbar */
-.desktop-nav {
-  background-color: colors.$navbar;
-  padding: 6px 3rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: $main-nav-height;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  @include bp(m) {
-    display: none;
-  }
-
-  &.hidden {
-    display: none;
-  }
-
-  ul {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  img {
-    height: 100%;
-  }
-
-  .left-nav a {
-    padding-right: 2.7rem;
-  }
-
-  .left-nav li:first-of-type a {
-    font-family: fonts.$nav-title;
-    font-size: 2rem;
-    font-weight: 600;
-  }
-
-  .right-nav a {
-    height: 100%;
-  }
-}
-
-/* Mobile Navbar */
-.mobile-nav {
-  background-color: colors.$navbar;
-  position: fixed;
-  left: 0;
-  height: $main-nav-height;
-  width: 100%;
-  display: none;
-
-  @include bp(m) {
-    display: block;
-  }
-
-  button {
-    border: none;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    position: relative;
-    background-color: colors.$navbar;
-    z-index: 1;
-    border-bottom: 1px solid colors.$mid-brown;
-
-    img {
-      padding-top: 4px;
-      height: 86%;
-      background-color: colors.$navbar;
-    }
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  a {
-    height: 100%;
-    padding: 17px 0;
-  }
-
-  ul {
-    margin-top: 0;
-    background-color: colors.$navbar;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 0%;
-    z-index: -1;
-    position: relative;
-
-    &.hidden {
-
-      li {
-        transition: transform 500ms ease-in-out;
-
-        // staggering the nav items transition
-        @for $i from 1 through $main-nav-count {
-          &:nth-child(#{$i}) {
-            transform: translateY($i * -90%);
-            // transform: translateY($i * -100%);
-          }
-        }
-      }
-    }
-  }
-
-  li {
-    background-color: colors.$navbar;
-    display: flex;
-    align-items: center;
-    height: 58px;
-    width: 100%;
-    border-bottom: 1px solid colors.$mid-brown;
-    justify-content: center;
-    background: linear-gradient(0deg, colors.$brown 80%, #432303);
-    position: relative;
-    transform: translateY(0%);
-    transition: transform 500ms ease-in-out;
-
-    // Defining the z-index for each mobile nav li
-    // $mobile-navs-z: (nth-child: z-index position)
-    // $mobile-navs-z: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
-    @each $key, $value in $mobile-navs-z {
-      &:nth-child(#{$key}) {
-        z-index: $value;
-      }
-    }
-      //***** ^^^ is shorthand for vvv *****
-      // li:nth-child(1) {
-      //   z-index: 5;
-      // }
-      // li:nth-child(2) {
-      //   z-index: 4;
-      // }
-      // li:nth-child(3) {
-      //   z-index: 3;
-      // }
-      // li:nth-child(4) {
-      //   z-index: 2;
-      // }
-      // li:nth-child(5) {
-      //   z-index: 1;
-      // }
-  }
-
-  li:first-of-type {
-    a {
-      font-family: fonts.$nav-title;
-      font-size: 2rem;
-      font-weight: 600;
-      padding: 3px 0;
-    }
-  }
-
-  li:last-of-type {
-    border-bottom: none;
-  }
-}
 
 /* Header */
 .header {

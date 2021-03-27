@@ -1,23 +1,30 @@
 
 /* Site Colors */
 $brown: #512b05;
-$soft-brown: #7e5d3c;
+$mid-brown: #7e5d3c;
+$lt-brown: #a38b76;
+$ltest-brown: #cec0b3;
 $dk-gry: #28303d;
 $white: #fff;
 $black: #000;
 
 
 /* Background */
-$bg: $white; // Default Background
+$bg: $white;
 
 
 /* Text Colors */
-$text: #000;  // black
-$link: rgba(143, 116, 93, .6);  // mid brown (transparent)
-$link-hover: rgba(143, 116, 93, 1);;  // mid brown
+$text: $brown;
+$link-hover: $brown;
+$link: $lt-brown;
 
 
 /* Main Navbar Colors */
 $navbar: $brown;
-$nav-link: rgba( 255, 255, 255, 0.5);
-$nav-link-hover: rgba( 255, 255, 255, 0.9);
+$nav-link: rgba(255, 255, 255, 0.5);
+$nav-link-hover : rgba(255, 255, 255, 1);
+
+
+/* Social Icons */
+$social-icon: rgba(143, 116, 93, .6);  // mid brown (transparent)
+$social-icon-hover: rgba(143, 116, 93, 1);  // mid brown

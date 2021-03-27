@@ -1,0 +1,15 @@
+
+/* Fonts */
+// @import url('https://fonts.googleapis.com/css2?family=Lato|Baloo+2:wght@400;600|Raleway|Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Lato:wght@300;400&display=swap');
+
+$title-font: 'Baloo 2', sans-serif;
+$subtitle-font: 'Century Gothic', Helvetica, sans-serif;
+
+$sans-serif: 'Lato', sans-serif;
+$serif: 'Garamond', serif;
+
+
+/* Main Navbar Fonts */
+$nav-title: $title-font;
+$nav-links: $subtitle-font;

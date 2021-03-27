@@ -1,14 +1,6 @@
-// @use './utilities/mixins' as *;
+@use './utilities/mixins' as *;
 @use 'utilities/colors';
-@import 'utilities/mixins.scss';
-
-/* Fonts */
-// @import url('https://fonts.googleapis.com/css2?family=Lato|Baloo+2:wght@400;600|Raleway|Sigmar+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Lato:wght@300;400&display=swap');
-$title-font: 'Baloo 2', sans-serif;
-$subtitle-font: 'Century Gothic', Helvetica, sans-serif;
-$sans-serif: 'Lato', sans-serif;
-
+@use 'utilities/fonts';
 
 /* Variables */
 $main-nav-height: 58px;
@@ -17,20 +9,25 @@ $mobile-navs-z: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
 
 
 /* General */
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   background-color: colors.$bg;
   color: colors.$text;
-  font-family: $sans-serif;
+  font-family: fonts.$sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+h1, h2, h3, h4, h5, h6 {
+  color: colors.$text;
+  font-family: fonts.$sans-serif;
 }
 
 p {
-  font-family: $sans-serif;
+  font-family: fonts.$sans-serif;
   font-size: 16px;
   color: colors.$text;
 
@@ -44,13 +41,13 @@ p {
 }
 
 a {
-  font-family: $subtitle-font;
+  font-family: fonts.$sans-serif;
   font-size: 16px;
-  color: colors.$nav-link;
+  color: colors.$link;
   text-decoration: none;
 
   &:hover {
-    color: colors.$nav-link-hover;
+    color: colors.$link-hover;
   }
 }
 
@@ -60,6 +57,8 @@ ul {
 
 li {
   list-style: none;
+  color: colors.$text;
+  font-family: fonts.$sans-serif;
 }
 
 
@@ -68,17 +67,28 @@ li {
   text-align: center;
   background-color: colors.$bg;
   min-height: 100vh;
-  color: colors.$dk-gry;
 }
 
 .content {
   padding-top: $main-nav-height;
 }
 
+/* Shared Navbar */
+.desktop-nav,
+.mobile-nav {
+  a {
+    color: colors.$nav-link;
+    font-family: fonts.$subtitle-font;
+
+    &:hover {
+      color: colors.$nav-link-hover;
+    }
+  }
+}
 
 /* Desktop Navbar */
 .desktop-nav {
-  background-color: colors.$brown;
+  background-color: colors.$navbar;
   padding: 6px 3rem;
   position: fixed;
   top: 0;
@@ -118,7 +128,7 @@ li {
   }
 
   .left-nav li:first-of-type a {
-    font-family: $title-font;
+    font-family: fonts.$nav-title;
     font-size: 2rem;
     font-weight: 600;
   }
@@ -130,7 +140,7 @@ li {
 
 /* Mobile Navbar */
 .mobile-nav {
-  background-color: colors.$brown;
+  background-color: colors.$navbar;
   position: fixed;
   left: 0;
   height: $main-nav-height;
@@ -147,14 +157,14 @@ li {
     width: 100%;
     padding: 0;
     position: relative;
-    background-color: colors.$brown;
+    background-color: colors.$navbar;
     z-index: 1;
-    border-bottom: 1px solid colors.$soft-brown;
+    border-bottom: 1px solid colors.$mid-brown;
 
     img {
       padding-top: 4px;
       height: 86%;
-      background-color: colors.$brown;
+      background-color: colors.$navbar;
     }
 
     &:hover {
@@ -173,7 +183,7 @@ li {
 
   ul {
     margin-top: 0;
-    background-color: colors.$brown;
+    background-color: colors.$navbar;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -198,14 +208,14 @@ li {
   }
 
   li {
-    background-color: colors.$brown;
+    background-color: colors.$navbar;
     display: flex;
     align-items: center;
     height: 58px;
     width: 100%;
-    border-bottom: 1px solid colors.$soft-brown;
+    border-bottom: 1px solid colors.$mid-brown;
     justify-content: center;
-    background: linear-gradient(0deg, #512b05 80%, #432303);
+    background: linear-gradient(0deg, colors.$brown 80%, #432303);
     position: relative;
     transform: translateY(0%);
     transition: transform 500ms ease-in-out;
@@ -238,7 +248,7 @@ li {
 
   li:first-of-type {
     a {
-      font-family: $title-font;
+      font-family: fonts.$nav-title;
       font-size: 2rem;
       font-weight: 600;
       padding: 3px 0;

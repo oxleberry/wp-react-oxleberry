@@ -28,6 +28,7 @@ function App() {
               <Switch>
                 <Route exact path="/"><Home slug="home"/></Route>
                 <Route path="/home"><Home slug="home"/></Route>
+                {/* <Route path="/products" component={Portfolio} /> */}
                 <Route path="/portfolio"><Portfolio slug="portfolio"/></Route>
                 <Route path="/creative-coding"><CreativeCoding slug="creative-coding"/></Route>
                 <Route path="/imessage-stickers"><IMessageStickers slug="imessage-stickers"/></Route>

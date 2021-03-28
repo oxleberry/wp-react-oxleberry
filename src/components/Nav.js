@@ -1,4 +1,5 @@
 import React, {Component } from 'react';
+import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
@@ -57,7 +58,11 @@ class Navbar extends Component {
           <ul className="left-nav">
             {this.state.navItems.map( (nav,idx) =>
               <li key={idx}>
-                <Link to={ `${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`} >{nav.title}</Link>
+                <NavLink
+                  to={`${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`}
+                  activeClassName="active">
+                  {nav.title}
+                </NavLink>
               </li>
             )}
           </ul>
@@ -76,7 +81,11 @@ class Navbar extends Component {
           <ul className="hidden">
             {this.state.navItems.map( (nav,idx) =>
               <li key={idx}>
-                <Link to={ `${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`} >{nav.title}</Link>
+                <NavLink
+                  to={`${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`}
+                  activeClassName="active">
+                  {nav.title}
+                </NavLink>
               </li>
             )}
           </ul>

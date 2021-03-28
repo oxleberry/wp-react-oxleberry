@@ -20,6 +20,10 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
       color: colors.$nav-link-hover;
     }
   }
+
+  .active {
+    color: colors.$nav-active;
+  }
 }
 
 

@@ -1,7 +1,8 @@
 
 import React, {Component } from 'react';
+import Header from './Header.js';
 
-class PagePosts extends Component {
+class PagePost extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -44,7 +45,6 @@ class PagePosts extends Component {
         // Find pagePost by matching all Posts slug with passed in component Props slug
         if (post.slug === this.props.slug) {
           console.log(this.props.slug)
-          // console.log(post.slug)
           pagePost = [post];
         }
       })
@@ -52,7 +52,7 @@ class PagePosts extends Component {
         allPosts: posts,
         pagePost: pagePost,
       })
-      console.log( "ALL pages Data:", this.state.allPosts );
+      // console.log( "ALL pages Data:", this.state.allPosts );
       console.log( "THIS pages Data:", this.state.pagePost[0] );
 		})
 	};
@@ -60,44 +60,19 @@ class PagePosts extends Component {
   render() {
     return (
       <div className="post-container">
-        {/* Displaying ALL of the Posts across the site */}
-        {/* {this.state.allPosts.map( post =>
-          <PagePost key={ post.id }
-            title={ post.title.rendered }
-            // desc={ post.acf.description }
-            // img={ post.acf.image }
-            content={ post.content.rendered }
-          /> )} */}
-
         {/* Displaying only posts for associated with a page */}
         {this.state.pagePost.map( post =>
-          <PagePost key={ post.id }
-            title={ post.title.rendered }
-            // desc={ post.acf.description }
-            // img={ post.acf.image }
-            content={ post.content.rendered }
-          /> )}
+          <div className="post" key={ post.id }>
+            <Header headline={post.acf.headline} />
+            {/* <h3 className="post-desc">{props.desc}</h3>
+              {renderImg} */}
+            <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+          </div>
+          )}
       </div>
     );
   }
 }
 
 
-// a single Post Component
-function PagePost(props) {
-  // checks if a Post has image data
-  // const hasImage = props.img;
-  // const renderImg = hasImage ? <img src={props.img.url} alt={props.img.title}/> : null;
-
-  return (
-    <div className="post">
-      <h2 className="post-title" dangerouslySetInnerHTML={{ __html: props.title }} />
-      {/* <h3 className="post-desc">{props.desc}</h3>
-      {renderImg} */}
-      <div className="post-content" dangerouslySetInnerHTML={{ __html: props.content }} />
-    </div>
-  )
-}
-
-
-export default PagePosts;
+export default PagePost;

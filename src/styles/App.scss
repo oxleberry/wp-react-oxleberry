@@ -4,6 +4,7 @@
 
 /* Components */
 @use 'components/nav';
+@use 'components/header';
 
 
 /* Variables */
@@ -25,6 +26,10 @@ body, html {
 h1, h2, h3, h4, h5, h6 {
   color: colors.$text;
   font-family: fonts.$sans-serif;
+}
+
+h1 {
+  font-size: 2em;
 }
 
 p {
@@ -72,16 +77,4 @@ li {
 
 .content {
   padding-top: nav.$main-nav-height;
-}
-
-
-/* Header */
-.header {
-  text-align: center;
-  text-transform: uppercase;
-  margin: 70px 50px 50px;
-
-  h1 {
-    font-size: 2em;
-  }
 }

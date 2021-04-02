@@ -22,9 +22,6 @@ function App() {
         <BrowserRouter>
             <Nav />
             <div className="content">
-            <header className="header">
-              <h1>Hello Oxleberry</h1>
-            </header>
               <Switch>
                 <Route exact path="/"><Home slug="home"/></Route>
                 <Route path="/home"><Home slug="home"/></Route>

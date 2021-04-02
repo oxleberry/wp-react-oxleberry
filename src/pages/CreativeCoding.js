@@ -1,9 +1,9 @@
 import React from "react";
-import PagePosts from '../components/PagePosts.js';
+import PagePost from '../components/PagePost.js';
 
 const CreativeCoding = (props) => (
   <main>
-    <PagePosts slug={ props.slug }/>
+    <PagePost slug={ props.slug }/>
   </main>
 );
 

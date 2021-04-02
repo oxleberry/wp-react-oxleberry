@@ -1,0 +1,16 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/colors';
+@use '../utilities/fonts';
+
+/* Header */
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 70px 50px 50px;
+
+  h1 {
+    font-family: fonts.$title-font;
+    font-size: 2.5em;
+    font-weight: 800;
+  }
+}

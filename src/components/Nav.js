@@ -54,24 +54,26 @@ class Navbar extends Component {
     return (
       <div>
         {/* Desktop */}
-        <nav className="desktop-nav">
-          <ul className="left-nav">
-            {this.state.navItems.map( (nav,idx) =>
-              <li key={idx}>
-                <NavLink
-                  to={`${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`}
-                  activeClassName="active">
-                  {nav.title}
-                </NavLink>
+        <div className="desktop-nav-full-width-wrapper">
+          <nav className="desktop-nav">
+            <ul className="left-nav">
+              {this.state.navItems.map( (nav,idx) =>
+                <li key={idx}>
+                  <NavLink
+                    to={`${nav.object_slug}` === `home` ? `/` : `/${nav.object_slug}/`}
+                    activeClassName="active">
+                    {nav.title}
+                  </NavLink>
+                </li>
+              )}
+            </ul>
+            <ul className="right-nav">
+              <li>
+                <Link to='/'><img src="http://www.oxleberry.com/all/mon_all.gif" alt="Oxleberry Logo"></img></Link>
               </li>
-            )}
-          </ul>
-          <ul className="right-nav">
-            <li>
-              <Link to='/'><img src="http://www.oxleberry.com/all/mon_all.gif" alt="Oxleberry Logo"></img></Link>
-            </li>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </div>
 
         {/* Mobile */}
         <nav className="mobile-nav">

@@ -78,3 +78,18 @@ li {
 .content {
   padding-top: nav.$main-nav-height;
 }
+
+
+/* Post Container */
+.post-container {
+  background-color: colors.$white;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto 4em;
+  padding: 2.5em;
+  box-shadow: 0px 20px 60px -20px rgba(0, 0, 0, 0.4);
+
+  @include bp(m) {
+    padding-top: nav.$main-nav-height;
+  }
+}

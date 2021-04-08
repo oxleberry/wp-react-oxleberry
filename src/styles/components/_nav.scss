@@ -33,6 +33,7 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
   background-color: colors.$navbar;
   width: 100%;
   height: $main-nav-height;
+  z-index: 100;
 
   @include bp(m) {
     display: none;

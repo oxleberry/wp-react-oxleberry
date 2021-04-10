@@ -59,14 +59,15 @@ class CreativeCoding extends Component {
 
   render() {
     return (
-      <div className="post-container creative-cards">
+      // <div className="post-container creative-cards">
+      <div className="post-container">
         {/* Displaying only posts for associated with a page */}
         {this.state.pagePost.map( post =>
           <div className="post" key={ post.id }>
             <Header headline={post.acf.headline} />
             {/* <h3 className="post-desc">{props.desc}</h3>
               {renderImg} */}
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+            {/* <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content.rendered }} /> */}
 
             {/* Repeater: Image, Title, Link */}
             <CreativeCard />

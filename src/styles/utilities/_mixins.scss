@@ -3,12 +3,15 @@
 // Credit: http://css-tricks.com/conditional-media-query-mixins/
 
 // Media Query Breakpoints
-// (No media query on 1024px + ) // Large devices (desktop) - Default styling size
-$screen-m: '(max-width: 1024px)'; // Medium devices (tablets)
-$screen-s: '(max-width: 600px)'; // Small devices (mobile)
+// (No media query ) // X-Large devices (desktop) - Default styling size
+$screen-l: '(max-width: 920px)'; // Large devices (small laptop)
+$screen-m: '(max-width: 680px)'; // Medium devices (tablets)
+$screen-s: '(max-width: 500px)'; // Small devices (mobile)
 
 @mixin bp($point) {
-  @if $point == m {
+  @if $point == l {
+    @media #{$screen-l} { @content; }
+  } @else if $point == m {
     @media #{$screen-m} { @content; }
   } @else if $point == s {
     @media #{$screen-s} { @content; }

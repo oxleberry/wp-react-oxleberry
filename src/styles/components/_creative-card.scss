@@ -4,13 +4,31 @@
 
 
 .creative-cards {
+  column-count: 4;
+  column-gap: 1.5rem;
+
+  @include bp(l) {
+    column-count: 3;
+  }
+
+  @include bp(m) {
+    column-count: 2;
+  }
+
+  @include bp(s) {
+    column-count: 1;
+  }
+
   .card-item {
-    display: inline-block;
-    border-radius: 12px 12px 12px 12px;
-    margin-bottom: 12px;
-    margin-left: auto;
-    margin-right: auto;
     width: 204px;
+    display: inline-block;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    @include bp(s) {
+      width: 80%;
+    }
 
     .img-block {
       background: colors.$lt-brown;
@@ -20,7 +38,7 @@
       margin-bottom: -1px;
 
       img {
-        max-width: 100%;
+        width: 100%;
         border-radius: 10px 10px 0px 0px;
         // opacity: 0.2;
         // animation: brighten2 1000ms ease-in-out forwards;

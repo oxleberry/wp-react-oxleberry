@@ -30,26 +30,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5rem;
 }
 
-p {
+p, li {
   font-family: fonts.$sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: colors.$text;
-
-  @include bp(m) {
-    color: turquoise;
-  }
-
-  @include bp(s) {
-    color: tomato;
-  }
 }
 
 a {
   font-family: fonts.$sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: colors.$link;
   text-decoration: none;
 
@@ -64,8 +56,6 @@ ul {
 
 li {
   list-style: none;
-  color: colors.$text;
-  font-family: fonts.$sans-serif;
 }
 
 
@@ -86,11 +76,7 @@ li {
   background-color: colors.$white;
   max-width: 1000px;
   min-height: 100vh;
-  margin: 0 auto 4em;
-  padding: 2.5em;
+  margin: 0 auto 64px;
+  padding: 40px;
   box-shadow: 0px 20px 60px -20px rgba(0, 0, 0, 0.4);
-
-  @include bp(m) {
-    padding-top: nav.$main-nav-height;
-  }
 }

@@ -6,17 +6,18 @@
 .header {
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 40px;
 
   h1 {
     font-family: fonts.$title-font;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-weight: 800;
+    line-height: 2.5rem;
 
     background: linear-gradient(#fff, #e9e4de);
     border: 2px solid #a38b77;
-    border-radius: .4em;
-    padding: 0.2em 0.1em 0.1em;
-    margin: 0 0 1em;
-    font-size: 2.5em;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    margin: 0;
   }
 }

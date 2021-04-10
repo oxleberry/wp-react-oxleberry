@@ -97,6 +97,7 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
   height: $main-nav-height;
   width: 100%;
   display: none;
+  z-index: 100;
 
   @include bp(m) {
     display: block;

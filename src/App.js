@@ -24,6 +24,7 @@ function App() {
             <div className="content">
               <Switch>
                 <Route exact path="/"><Home slug="home"/></Route>
+                <Route path="/2021_website"><Home slug="home"/></Route>
                 <Route path="/home"><Home slug="home"/></Route>
                 {/* <Route path="/products" component={Portfolio} /> */}
                 <Route path="/portfolio"><Portfolio slug="portfolio"/></Route>

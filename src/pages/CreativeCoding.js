@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import Header from '../components/Header.js';
 import CreativeCard from '../components/CreativeCard.js';
+import Footer from '../components/Footer.js';
 
 class CreativeCoding extends Component {
 	constructor() {
@@ -76,6 +77,7 @@ class CreativeCoding extends Component {
             />
           )}
         </main>
+        <Footer />
       </div>
     );
   }

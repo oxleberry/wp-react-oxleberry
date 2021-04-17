@@ -55,7 +55,7 @@ class Navbar extends Component {
       <div>
         {/* Desktop */}
         <div className="desktop-nav-full-width-wrapper">
-          <nav className="desktop-nav">
+          <nav className="desktop-nav" aria-label="Primary Naviation" role="navigation">
             <ul className="left-nav">
               {this.state.navItems.map( (nav,idx) =>
                 <li key={idx}>
@@ -76,8 +76,8 @@ class Navbar extends Component {
         </div>
 
         {/* Mobile */}
-        <nav className="mobile-nav">
-          <button onClick={toggleMobileNav}>
+        <nav className="mobile-nav" aria-label="Mobile Naviation" role="navigation">
+          <button onClick={toggleMobileNav} aria-label="Mobile Navigation Trigger">
             <img src="http://www.oxleberry.com/all/mon_all.gif" alt="Oxleberry Logo"></img>
           </button>
           <ul className="hidden">

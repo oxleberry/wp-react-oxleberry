@@ -1,0 +1,32 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/colors';
+@use '../utilities/fonts';
+
+/* Footer */
+.footer {
+
+  hr {
+    border-top: 1px solid colors.$lt-brown;
+    opacity: 0.3;
+  }
+
+  svg {
+    width: 30px;
+  }
+
+  ul {
+    margin: 0 auto;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    padding: 16px 28px 10px;
+  }
+
+  .copyright {
+    color: colors.$lt-brown;
+    opacity: 0.8;
+  }
+}

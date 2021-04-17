@@ -6,6 +6,7 @@
 .creative-cards {
   column-count: 4;
   column-gap: 1.5rem;
+  margin-bottom: 65px;
 
   @include bp(l) {
     column-count: 3;

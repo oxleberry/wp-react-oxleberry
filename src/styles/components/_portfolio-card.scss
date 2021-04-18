@@ -16,6 +16,8 @@
     @include bp(l) {
       margin-left: 0;
       padding-right: 0;
+      padding-left: 0;
+      border-width: 0 0 0 0px;
     }
 
     .two-col-container {
@@ -33,13 +35,11 @@
       display: flex;
       flex-direction: column;
       width: 65%;
-      // justify-content: center;
       padding-right: 32px;
 
       @include bp(l) {
         width: 100%;
         padding-right: 0;
-        // padding-bottom: 20px;
       }
 
       .title {
@@ -52,6 +52,11 @@
         text-align: left;
         margin-top: 0;
         margin-bottom: 16px;
+
+        @include bp(l) {
+          font-size: 40px;
+          letter-spacing: 0;
+        }
       }
 
       img {
@@ -63,7 +68,6 @@
       display: flex;
       flex-direction: column;
       width: 35%;
-      justify-content: space-around;
 
       @include bp(l) {
         flex-direction: column-reverse;
@@ -82,7 +86,7 @@
         font-weight: 900;
         text-transform: uppercase;
         padding: 10px 26px 8px;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         transition: border-color 300ms ease;
 
         @include bp(l) {
@@ -97,22 +101,20 @@
       h3 {
         color: colors.$lt-brown;
         font-size: 16px;
-        margin-bottom: 12px;
+        margin-bottom: 6px;
       }
 
       .desc {
+        text-align: justify;
+
         @include bp(l) {
-          text-align: left;
           margin-bottom: 0;
         }
+      }
 
-        ul {
-          margin-top: 0;
-
-          @include bp(l) {
-            margin-bottom: 0;
-          }
-        }
+      ul {
+        margin-top: 0;
+        margin-bottom: 12px;
       }
     }
   }

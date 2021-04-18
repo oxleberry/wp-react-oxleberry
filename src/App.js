@@ -27,7 +27,7 @@ function App() {
                 <Route path="/2021_website"><Home slug="home"/></Route>
                 <Route path="/home"><Home slug="home"/></Route>
                 {/* <Route path="/products" component={Portfolio} /> */}
-                <Route path="/portfolio"><Portfolio slug="portfolio"/></Route>
+                <Route path="/portfolio"><Home slug="home"/></Route>
                 <Route path="/creative-coding"><CreativeCoding slug="creative-coding"/></Route>
                 <Route path="/imessage-stickers"><IMessageStickers slug="imessage-stickers"/></Route>
                 <Route path="/about"><About slug="about"/></Route>

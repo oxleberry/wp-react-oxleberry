@@ -1,0 +1,129 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/colors';
+@use '../utilities/fonts';
+
+
+.portfolio-cards {
+  min-height: 100vh;
+  margin-bottom: 20px;
+
+  .project-item {
+    padding: 0 32px;
+    margin-left: 30px;
+    border-width: 0 0 0 8px;
+    border-style: solid;
+
+    @include bp(l) {
+      margin-left: 0;
+      padding-right: 0;
+    }
+
+    .two-col-container {
+      padding: 50px 0 30px;
+      display: flex;
+      justify-content: space-between;
+
+      @include bp(l) {
+        flex-direction: column;
+        padding-bottom: 24px;
+      }
+    }
+
+    .column-left {
+      display: flex;
+      flex-direction: column;
+      width: 65%;
+      // justify-content: center;
+      padding-right: 32px;
+
+      @include bp(l) {
+        width: 100%;
+        padding-right: 0;
+        // padding-bottom: 20px;
+      }
+
+      .title {
+        font-family: fonts.$title;
+        font-size: 48px;
+        line-height: 40px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .column-right {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+      justify-content: space-around;
+
+      @include bp(l) {
+        flex-direction: column-reverse;
+        width: 100%;
+      }
+
+      button {
+        background-color: colors.$pale-brown;
+        background-image: linear-gradient(colors.$off-white, colors.$pale-brown);
+        border: 2px solid colors.$white;
+        border-radius: 12px;
+        color: colors.$brown;
+        font-family: fonts.$title;
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 10px 26px 8px;
+        margin-bottom: 20px;
+        transition: border-color 300ms ease;
+
+        @include bp(l) {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          border-color: colors.$lt-brown;
+        }
+      }
+
+      h3 {
+        color: colors.$lt-brown;
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      .desc {
+        @include bp(l) {
+          text-align: left;
+          margin-bottom: 0;
+        }
+
+        ul {
+          margin-top: 0;
+
+          @include bp(l) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .project-item:first-of-type .two-col-container {
+    padding-top: 30px;
+
+    @include bp(l) {
+      padding-top: 0;
+      margin-left: 0;
+      padding-right: 0;
+    }
+  }
+}

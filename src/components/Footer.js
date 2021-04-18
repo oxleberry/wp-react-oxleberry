@@ -4,7 +4,7 @@ const currentYear = new Date().getFullYear();
 
 const Footer = (props) => (
   <footer className="footer">
-    <hr />
+    {/* <hr /> */}
     <nav aria-label="Social Links Footer Naviation" role="navigation">
       <ul>
         <li>

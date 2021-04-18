@@ -77,6 +77,7 @@ class CreativeCoding extends Component {
             />
           )}
         </main>
+        <hr />
         <Footer />
       </div>
     );

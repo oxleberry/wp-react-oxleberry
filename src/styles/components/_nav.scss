@@ -14,7 +14,7 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
 .mobile-nav {
   a {
     color: colors.$nav-link;
-    font-family: fonts.$subtitle-font;
+    font-family: fonts.$subtitle;
 
     &:hover {
       color: colors.$nav-link-hover;

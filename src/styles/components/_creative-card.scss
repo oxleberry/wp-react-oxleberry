@@ -7,6 +7,7 @@
   column-count: 4;
   column-gap: 1.5rem;
   margin-bottom: 65px;
+  min-height: 100vh;
 
   @include bp(l) {
     column-count: 3;

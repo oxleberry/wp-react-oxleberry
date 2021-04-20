@@ -4,11 +4,21 @@ import { Link } from "react-router-dom";
 
 
 const toggleMobileNav = (() => {
-  const navItem = document.querySelectorAll(".mobile-nav ul");
-  navItem.forEach(item => {
-    item.classList.toggle('hidden');
-  })
-})
+  const navList = document.querySelector('nav.mobile-nav ul');
+    navList.classList.toggle('hidden');
+});
+
+const closeMobileNav = (() => {
+  const navBtn = document.querySelector('nav.mobile-nav button');
+  const navList = document.querySelector('nav.mobile-nav ul');
+  window.addEventListener('mouseup', (event) => {
+    // hide the mobile navList when clicking outside of the nav button
+    if (navList && event.target !== navBtn &&
+        event.target.parentNode !== navBtn) {
+      navList.classList.add('hidden');
+    }
+  });
+});
 
 class Navbar extends Component {
 	constructor() {
@@ -51,6 +61,7 @@ class Navbar extends Component {
   };
 
   render() {
+    closeMobileNav();
     return (
       <div>
         {/* Desktop */}

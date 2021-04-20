@@ -13,7 +13,7 @@ const PortfolioCard = ({
         </a>
       </div>
       <div className="column-right">
-        <a href={codeLink}>
+        <a className="btn" href={codeLink}>
           <button style={textColor}>Github Code</button>
         </a>
         <div className="tech-block">

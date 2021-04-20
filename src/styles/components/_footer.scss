@@ -22,6 +22,10 @@
 
   li {
     padding: 16px 28px 10px;
+
+    @include bp(l) {
+      padding: 16px 18px 10px;
+    }
   }
 
   .copyright {

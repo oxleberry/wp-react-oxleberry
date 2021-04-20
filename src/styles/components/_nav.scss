@@ -135,12 +135,28 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
 
   ul {
     margin-top: 0;
+    margin-bottom: 0;
     background-color: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: -1;
-    position: relative;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.hidden {
+      li {
+        transition: transform 400ms ease-in-out;
+        // staggering the nav items transition
+        @for $i from 0 through $main-nav-count {
+          &:nth-child(#{$i}) {
+            transform: translateY($i * 10%);
+            // transform: translateY($i * 0%);
+          }
+        }
+      }
+    }
 
     li {
       background-color: colors.$navbar;
@@ -151,9 +167,15 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
       border-bottom: 1px solid colors.$mid-brown;
       justify-content: center;
       background: linear-gradient(0deg, colors.$brown 80%, #432303);
-      position: relative;
-      transform: translateY(0%);
-      transition: transform 500ms ease-in-out;
+      position: absolute;
+      top: 0;
+      transition: transform 700ms ease-in-out;
+      // staggering the nav items transition
+      @for $i from 0 through $main-nav-count {
+        &:nth-child(#{$i}) {
+          transform: translateY($i * 100%);
+        }
+      }
 
       // Defining the z-index for each mobile nav li
       // $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
@@ -179,6 +201,11 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
         // li:nth-child(5) {
         //   z-index: 1;
         // }
+
+
+      a {
+        width: 100%;
+      }
     }
 
     li:first-of-type {
@@ -192,20 +219,6 @@ $mobile-nav-z-index: (1: 5, 2: 4, 3: 3, 4: 2, 5: 1);
 
     li:last-of-type {
       border-bottom: none;
-    }
-
-    &.hidden {
-      li {
-        transition: transform 500ms ease-in-out;
-
-        // staggering the nav items transition
-        @for $i from 1 through $main-nav-count {
-          &:nth-child(#{$i}) {
-            // transform: translateY($i * -90%);
-            transform: translateY($i * -100%);
-          }
-        }
-      }
     }
   }
 }

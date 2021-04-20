@@ -74,9 +74,15 @@
         width: 100%;
       }
 
+      a.btn {
+        width: 196px;
+        margin: 0 auto;
+      }
+
       button {
         background-color: colors.$pale-brown;
         background-image: linear-gradient(colors.$off-white, colors.$pale-brown);
+        cursor: pointer;
         border: 2px solid colors.$white;
         border-radius: 12px;
         color: colors.$brown;

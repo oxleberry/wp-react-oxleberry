@@ -1,10 +1,18 @@
 import React from "react";
-import PagePost from '../components/PagePost.js';
+import Header from '../components/Header.js';
+import { AboutTile, AboutSocialTile } from "../components/AboutTiles.js";
+import Footer from '../components/Footer.js';
 
 const About = (props) => (
-  <main>
-    <PagePost slug={ props.slug }/>
-  </main>
+  <div className="post-container">
+    <Header headline="Static About Page with Examples" />
+    <main className="about-tiles">
+      <AboutTile />
+      <AboutSocialTile />
+    </main>
+    <hr />
+    <Footer />
+  </div>
 );
 
 

@@ -7,6 +7,7 @@
 @use 'components/header';
 @use 'components/portfolio-card';
 @use 'components/creative-card';
+@use 'components/about-tiles';
 @use 'components/footer';
 
 
@@ -63,7 +64,6 @@ li {
 hr {
   border-top: 1px solid colors.$lt-brown;
   opacity: 0.3;
-  margin-bottom: 0;
 }
 
 

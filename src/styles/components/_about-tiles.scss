@@ -1,0 +1,87 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/colors';
+@use '../utilities/fonts';
+
+
+.about-tiles {
+  column-count: 4;
+  column-gap: 1.5rem;
+  margin-bottom: 30px;
+  min-height: 100vh;
+
+  @include bp(l) {
+    column-count: 3;
+  }
+
+  @include bp(m) {
+    column-count: 2;
+  }
+
+  @include bp(s) {
+    column-count: 1;
+  }
+
+  .card-block {
+    width: 204px;
+    display: inline-block;
+    margin-bottom: 18px;
+    width: 100%;
+
+    @include bp(s) {
+      width: 80%;
+    }
+
+    // Image Block
+    .img-block {
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      // Image when used with a Text Block
+      &.flat-bottom-edge img {
+        border-radius: 5px 5px 0px 0px;
+      }
+    }
+
+    // Text Block
+    .text-block {
+      background: #fff;
+      border: 1px solid colors.$ltest-brown;
+      border-radius: 6px;
+      padding: 10px 20px;
+
+      h2 {
+        color: colors.$lt-brown;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 400;
+      }
+
+      p {
+        color: colors.$lt-brown;
+        font-size: 13px;
+        line-height: 15px;
+
+      }
+    }
+
+    // Text Block when used with an Image Block
+    .img-block + .text-block {
+      border-radius: 0px 0px 6px 6px;
+      margin-top: -4px;
+    }
+
+    // Social List in AboutSocialTile Component
+    ul.social-list {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 8px;
+
+      li {
+        width: 24px;
+        margin: 0 8px;
+      }
+    }
+  }
+}

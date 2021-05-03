@@ -39,9 +39,10 @@
       }
 
       // Image when used with a Text Block
-      &.flat-bottom-edge img {
-        border-radius: 5px 5px 0px 0px;
-      }
+      // ** being Inlined Styled **
+      // &.flat-bottom-edge img {
+      //   border-radius: 5px 5px 0px 0px;
+      // }
     }
 
     // Text Block

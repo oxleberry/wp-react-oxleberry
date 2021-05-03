@@ -1,33 +1,34 @@
 import React from "react";
 
+const borderRadius = '5px 5px 0 0';
 
-const AboutTile = (props) => (
+
+const AboutTile = ({type, img, title, desc, url}) => (
   <div>
-    {/* Image & Text tile - Full example */}
-    <div className="card-block">
-      <a href="http://www.oxleberry.com/crafts/01_new.html">
-        <div className="img-block flat-bottom-edge">
-          <img src="http://www.oxleberry.com/about/pics/02_1.jpg" alt="test"/>
-        </div>
-        <div className="text-block">
-          <h2 class="card-text">Image &amp; Text Example <br />"Brady the Dog"</h2>
-          <p> Ingredients: <br /> granola, coconut flakes, chocolate, and 1 dried cranberry (for the tongue)</p>
-        </div>
-      </a>
-    </div>
-    {/* Text Only - example */}
-    <div className="card-block">
-      <div className="text-block">
-        <h2 class="card-text">Text Only Example</h2>
-        <p> Ingredients: <br /> granola, coconut flakes, chocolate, and 1 dried cranberry (for the tongue)</p>
+    { url ?
+      <div className="card-block">
+        <a href={url}>
+          {img ? <div className="img-block">
+            <img style={type === 'Image & Text Tile' ? {borderRadius: borderRadius } : null}
+              src={img.url} alt={img.alt}/>
+          </div> : null }
+          {title || desc ? <div className="text-block">
+            {title ? <div className="tile-title" dangerouslySetInnerHTML={{__html: title}} /> : null}
+            {desc ? <div className="tile-desc" dangerouslySetInnerHTML={{__html: desc}} /> : null}
+          </div> : null }
+        </a>
       </div>
-    </div>
-    {/* Image Only - example */}
-    <div className="card-block">
-      <div className="img-block">
-        <img src="http://www.oxleberry.com/about/pics/02_1.jpg" alt="test"/>
+    : <div className="card-block">
+        {img ? <div className="img-block">
+          <img style={type === 'Image & Text Tile' ? {borderRadius: borderRadius } : null}
+            src={img.url} alt={img.alt}/>
+        </div> : null }
+        {title || desc ? <div className="text-block">
+          {title ? <div className="tile-title" dangerouslySetInnerHTML={{__html: title}} /> : null}
+          {desc ? <div className="tile-desc" dangerouslySetInnerHTML={{__html: desc}} /> : null}
+        </div> : null }
       </div>
-    </div>
+    }
   </div>
 );
 
@@ -36,7 +37,7 @@ const AboutTile = (props) => (
 const AboutSocialTile = (props) => (
   <div className="card-block">
     <div className="text-block">
-      <h2 class="card-text">Thanks for checking me out!</h2>
+      <h2 className="card-text">Thanks for checking me out!</h2>
       <ul className="social-list">
         <li>
           <a href="https://github.com/oxleberry/">

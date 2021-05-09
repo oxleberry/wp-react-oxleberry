@@ -1,0 +1,15 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/colors';
+@use '../utilities/fonts';
+
+
+.text-list {
+  list-style: disc;
+  text-align: left;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.text-list:last-child {
+  margin-bottom: 40px;
+}

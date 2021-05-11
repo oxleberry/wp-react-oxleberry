@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import Header from '../components/Header.js';
 import TextList from '../components/TextList.js';
+import ThreeColImages from '../components/ThreeColImages.js';
 import Footer from '../components/Footer.js';
 
 class IMessageStickers extends Component {
@@ -10,6 +11,7 @@ class IMessageStickers extends Component {
       pagePost: [],
       header: [],
       textList: [],
+      threeColImages: [],
     }
 
 		// Grabbing WP Pages API data
@@ -47,10 +49,11 @@ class IMessageStickers extends Component {
         pagePost: pagePost,
         header: posts.acf.header_headline,
         textList: posts.acf.text_list,
+        threeColImages: posts.acf.three_col_images,
       })
       console.log("IMessage Data:", this.state.pagePost);
-      console.log("IMessage Data - TextList:", this.state.textList);
-      // console.log("About Type:", this.state.tiles[0].type);
+      // console.log("IMessage Data - TextList:", this.state.textList);
+      // console.log("IMessage Data - ThreeColImages:", this.state.threeColImages);
 		})
 	};
 
@@ -59,11 +62,14 @@ class IMessageStickers extends Component {
       <div className="post-container">
         <Header headline={this.state.header} />
         <main className="imessage-stickers">
-          {this.state.textList.map((listItem, idx) =>
-            <TextList key={idx}
-              text={listItem.text}
-            />
-          )}
+          <ul>
+            {this.state.textList.map((listItem, idx) =>
+              <TextList key={idx} text={listItem.text}/>)}
+          </ul>
+          <div className="three-col-images">
+            {this.state.threeColImages.map((listItem, idx) =>
+              <ThreeColImages key={idx} image={listItem.image}/>)}
+          </div>
         </main>
         <hr />
         <Footer />

@@ -1,0 +1,28 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/colors';
+@use '../utilities/fonts';
+
+
+.three-col-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  img {
+    width: 29%;
+    margin: 2%;
+    border-radius: 35px;
+    box-shadow: 0px 20px 60px -20px rgb(0 0 0 / 40%);
+
+    @include bp (m) {
+      width: 46%;
+      margin: 2%;
+    }
+
+    @include bp (s) {
+      width: 100%;
+    }
+  }
+
+  margin-bottom: 50px;
+}

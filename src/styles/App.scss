@@ -3,17 +3,14 @@
 @use 'utilities/fonts';
 
 /* Components */
-@use 'components/nav';
-@use 'components/header';
-@use 'components/portfolio-card';
+@use 'components/about-tiles';
 @use 'components/creative-card';
+@use 'components/footer';
+@use 'components/header';
+@use 'components/nav';
+@use 'components/portfolio-card';
 @use 'components/text-list';
 @use 'components/three-col-images';
-@use 'components/about-tiles';
-@use 'components/footer';
-
-
-/* Variables */
 
 
 /* General */

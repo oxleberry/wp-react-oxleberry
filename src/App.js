@@ -1,8 +1,6 @@
-// import React, {Component } from 'react';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-// import './App.css';
 import './styles/App.scss';
 import Home from './pages/Home.js';
 import CreativeCoding from './pages/CreativeCoding.js';
@@ -12,31 +10,25 @@ import Contact from './pages/Contact.js';
 import Nav from './components/Nav.js';
 
 function App() {
-
-// class App extends Component {
-//   render() {
-
-    return (
-      <div className="app">
-        <BrowserRouter>
-            <Nav />
-            <div className="content">
-              <Switch>
-                <Route exact path="/"><Home slug="home"/></Route>
-                <Route path="/2021_website"><Home slug="home"/></Route>
-                <Route path="/home"><Home slug="home"/></Route>
-                <Route path="/portfolio"><Home slug="home"/></Route>
-                <Route path="/creative-coding"><CreativeCoding slug="creative-coding"/></Route>
-                <Route path="/imessage-stickers"><IMessageStickers slug="imessage-stickers"/></Route>
-                <Route path="/about"><About slug="about"/></Route>
-                <Route path="/contact"><Contact slug="contact" /></Route>
-              </Switch>
-            </div>
-            {/* <Footer /> */}
-          </BrowserRouter>
-      </div>
-    );
-  // }
+  return (
+    <div className="app">
+      <BrowserRouter>
+          <Nav />
+          <div className="content">
+            <Switch>
+              <Route exact path="/"><Home slug="home"/></Route>
+              <Route path="/2021_website"><Home slug="home"/></Route>
+              <Route path="/home"><Home slug="home"/></Route>
+              <Route path="/portfolio"><Home slug="home"/></Route>
+              <Route path="/creative-coding"><CreativeCoding slug="creative-coding"/></Route>
+              <Route path="/imessage-stickers"><IMessageStickers slug="imessage-stickers"/></Route>
+              <Route path="/about"><About slug="about"/></Route>
+              <Route path="/contact"><Contact slug="contact" /></Route>
+            </Switch>
+          </div>
+        </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;

@@ -16,14 +16,14 @@ function App() {
           <Nav />
           <div className="content">
             <Switch>
-              <Route exact path="/"><Home slug="home"/></Route>
-              <Route path="/2021_website"><Home slug="home"/></Route>
-              <Route path="/home"><Home slug="home"/></Route>
-              <Route path="/portfolio"><Home slug="home"/></Route>
-              <Route path="/creative-coding"><CreativeCoding slug="creative-coding"/></Route>
-              <Route path="/imessage-stickers"><IMessageStickers slug="imessage-stickers"/></Route>
-              <Route path="/about"><About slug="about"/></Route>
-              <Route path="/contact"><Contact slug="contact" /></Route>
+              <Route exact path="/" component={Home}></Route>
+              <Route path="/2021_website" component={Home}></Route>
+              <Route path="/home" component={Home}></Route>
+              <Route path="/portfolio" component={Home}></Route>
+              <Route path="/creative-coding" component={CreativeCoding}></Route>
+              <Route path="/imessage-stickers" component={IMessageStickers}></Route>
+              <Route path="/about" component={About}></Route>
+              <Route path="/contact" component={Contact}></Route>
             </Switch>
           </div>
         </BrowserRouter>

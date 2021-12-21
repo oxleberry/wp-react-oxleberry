@@ -2,33 +2,43 @@ import React from "react";
 
 const borderRadius = '5px 5px 0 0';
 
-
-const AboutTile = ({type, img, title, desc, url}) => (
+const AboutTile = ({type, img, title, desc, url, isSprite}) => (
   <div>
-    { url ?
-      <div className="card-block">
+		{/* with Sprite */}
+		{ isSprite ?
+      <div className="card-block sprite-container">
         <a href={url}>
-          {img ? <div className="img-block">
-            <img style={type === 'Image & Text Tile' ? {borderRadius: borderRadius } : null}
-              src={img.url} alt={img.alt}/>
-          </div> : null }
-          {title || desc ? <div className="text-block">
-            {title ? <div className="tile-title" dangerouslySetInnerHTML={{__html: title}} /> : null}
-            {desc ? <div className="tile-desc" dangerouslySetInnerHTML={{__html: desc}} /> : null}
-          </div> : null }
+          <div className="img-block sprite" style={{background: `url(${img.url})`}}></div>
         </a>
       </div>
-    : <div className="card-block">
-        {img ? <div className="img-block">
-          <img style={type === 'Image & Text Tile' ? {borderRadius: borderRadius } : null}
-            src={img.url} alt={img.alt}/>
-        </div> : null }
-        {title || desc ? <div className="text-block">
-          {title ? <div className="tile-title" dangerouslySetInnerHTML={{__html: title}} /> : null}
-          {desc ? <div className="tile-desc" dangerouslySetInnerHTML={{__html: desc}} /> : null}
-        </div> : null }
-      </div>
-    }
+		:
+			// with Links
+			url ?
+			<div className="card-block">
+				<a href={url}>
+					{img ? <div className="img-block">
+						<img style={type === 'Image & Text Tile' ? {borderRadius: borderRadius } : null}
+							src={img.url} alt={img.alt}/>
+					</div> : null }
+					{title || desc ? <div className="text-block">
+						{title ? <div className="tile-title" dangerouslySetInnerHTML={{__html: title}} /> : null}
+						{desc ? <div className="tile-desc" dangerouslySetInnerHTML={{__html: desc}} /> : null}
+					</div> : null }
+				</a>
+			</div>
+			:
+			// without Links
+			<div className="card-block">
+				{img ? <div className="img-block">
+					<img style={type === 'Image & Text Tile' ? {borderRadius: borderRadius } : null}
+						src={img.url} alt={img.alt}/>
+				</div> : null }
+				{title || desc ? <div className="text-block">
+					{title ? <div className="tile-title" dangerouslySetInnerHTML={{__html: title}} /> : null}
+					{desc ? <div className="tile-desc" dangerouslySetInnerHTML={{__html: desc}} /> : null}
+				</div> : null }
+			</div>
+		}
   </div>
 );
 

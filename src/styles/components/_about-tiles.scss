@@ -31,12 +31,36 @@
       width: 80%;
     }
 
+		&.sprite-container {
+			background-color: #2f2f33;
+			border-radius: 5px;
+		}
+
     // Image Block
     .img-block {
       img {
         width: 100%;
         border-radius: 5px;
       }
+
+			&.sprite {
+				margin: 0 auto;
+				width: 120px;
+				height: 140px;
+				// background: url("./images/tree-monster-sprite.png");
+				animation: sprite 500ms steps(8) 5 forwards;
+				transform: scale(.95);
+
+				&:hover {
+					animation: sprite 500ms steps(8) infinite forwards;
+				}
+			}
+
+			// SPRITE KEYFRAMES
+			@keyframes sprite {
+				from { background-position: 0px; }
+				to { background-position: -960px; }
+			}
 
       // Image when used with a Text Block
       // ** being Inlined Styled **

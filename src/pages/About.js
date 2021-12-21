@@ -67,6 +67,7 @@ class About extends Component {
               title={tile.title}
               desc={tile.description}
               url={tile.url}
+							isSprite={tile.is_sprite}
             />
           )}
           <AboutSocialTile />

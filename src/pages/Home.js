@@ -48,11 +48,8 @@ class Home extends Component {
         pagePost: pagePost,
         header: posts.acf.header_headline,
         cards: posts.acf.cards,
-        techList: posts.acf.cards[0].tech_list,
       })
-      console.log("PORTFOLIO Data:", this.state.pagePost);
-      console.log("PORTFOLIO Data:", this.state.cards[0].tech_list);
-      console.log("PORTFOLIO Data:", this.state.techList);
+      // console.log("PORTFOLIO Data:", this.state.pagePost);
 		})
 	};
 
@@ -68,7 +65,7 @@ class Home extends Component {
               image={card.image}
               projLink={card.project_link}
               codeLink={card.github_link}
-              techList={this.state.techList}
+              techList={card.tech_list}
               borderColor={{borderColor:`${card.color}`}}
               textColor={{color:`${card.color}`}}
             />

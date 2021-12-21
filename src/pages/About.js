@@ -50,7 +50,7 @@ class About extends Component {
         tiles: posts.acf.tiles,
       })
       // console.log("About Data:", this.state.pagePost);
-      console.log("About Tiles:", this.state.tiles);
+      // console.log("About Tiles:", this.state.tiles);
       // console.log("About Type:", this.state.tiles[0].type);
 		})
 	};

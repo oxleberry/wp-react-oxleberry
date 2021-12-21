@@ -56,7 +56,7 @@ class Navbar extends Component {
 		const navItems = this.fetchNavData();
 		navItems.then( ( navItem ) => {
 			this.setState( { navItems: navItem } )
-			console.log( "Nav Data:", this.state.navItems );
+			// console.log( "Nav Data:", this.state.navItems );
 		})
   };
 

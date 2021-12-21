@@ -58,7 +58,7 @@ class CreativeCoding extends Component {
         header: posts.acf.header_headline,
         cards: posts.acf.cards,
       })
-      console.log("CREATIVE CODING Data:", this.state.pagePost);
+      // console.log("CREATIVE CODING Data:", this.state.pagePost);
       // console.log("CREATIVE CODING Data:", this.state.header);
       // console.log("CREATIVE CODING Data:", this.state.cards);
 		})
